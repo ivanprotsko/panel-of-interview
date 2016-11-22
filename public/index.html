@@ -1,0 +1,13 @@
+<!DOCTYPE html><html lang="ru"><head><!-- Meta--><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Favicon--><link rel="icon" href="favicon.ico" type="image/x-icon"><!-- Styles--><link rel="stylesheet" href="styles/app2.css"><script src="js/panel-of-interview.js"></script></head><body><div class="block-of-question"><div class="header"><h6>Вопрос № 1</h6></div><div class="body"><div class="question"><h5 id="type-of-question">Тип вопроса</h5><textarea placeholder="Вопрос" cols="60"></textarea><ul><li>Несколько вариантов ответа</li><li>Один вариант ответа</li><li>Короткий ответ</li><li>Содержательный</li></ul></div><div class="answer"><fieldset><figure><img src="images/ico_drag-n-drop.png"></figure><div class="checkbox"><input type="checkbox" id="1"><label for="1">Первый вариант ответ</label></div><div class="textarea"><textarea placeholder="Первый вариант ответа" cols="57"></textarea></div></fieldset><fieldset><figure><img src="images/ico_drag-n-drop.png"></figure><div class="checkbox"><input type="checkbox" id="2"><label for="2">Второй вариант ответа</label></div><div class="textarea"><textarea placeholder="Первый вариант ответа" cols="57"></textarea></div></fieldset></div></div><div class="footer"><button id="to-answer">Ответить</button><button id="save">Сохранить вопрос</button></div></div><!-- Textarea resize--><script>var textarea = document.querySelector('textarea');
+
+textarea.addEventListener('keydown', autosize);
+
+function autosize() {
+  var el = this;
+  setTimeout(function () {
+    el.style.cssText = 'height:25px';
+    // for box-sizing other than "content-box" use:
+    // el.style.cssText = '-moz-box-sizing:content-box';
+    el.style.cssText = 'height:' + el.scrollHeight + 'px';
+  }, 0);
+}</script></body></html>

@@ -1,0 +1,78 @@
+doctype html
+html(lang='ru')
+  head
+
+    // Meta
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+
+    // Favicon
+    link(rel="icon" href="favicon.ico" type="image/x-icon")
+
+    // Styles
+    link(rel='stylesheet', href='styles/app2.css')
+    script(src='js/panel-of-interview.js')
+
+  body
+
+    .block-of-question
+
+      .header
+        h6 Вопрос № 1
+
+      .body
+
+        .question
+
+          h5(id='type-of-question') Тип вопроса
+          textarea((placeholder="Вопрос" cols="60")
+
+          ul(id='list-of-variants-of-answer')
+            li Несколько вариантов ответа
+            li Один вариант ответа
+            li Короткий ответ
+            li Содержательный
+
+        .answer
+
+          fieldset
+
+            figure
+              img(src='images/ico_drag-n-drop.png')
+            .checkbox
+              input(type='checkbox' id='1')
+              label(for='1') Первый вариант ответ
+            .textarea
+              textarea(placeholder="Первый вариант ответа" cols="57")
+
+          fieldset
+
+            figure
+              img(src='images/ico_drag-n-drop.png')
+            .checkbox
+              input(type='checkbox' id='2')
+              label(for='2') Второй вариант ответа
+            .textarea
+              textarea(placeholder="Первый вариант ответа" cols="57")
+
+
+      .footer
+        button(id='to-answer') Ответить
+        button(id='save') Сохранить вопрос
+
+    // Textarea resize
+    script.
+      var textarea = document.querySelector('textarea');
+
+      textarea.addEventListener('keydown', autosize);
+
+      function autosize() {
+        var el = this;
+        setTimeout(function () {
+          el.style.cssText = 'height:25px';
+          // for box-sizing other than "content-box" use:
+          // el.style.cssText = '-moz-box-sizing:content-box';
+          el.style.cssText = 'height:' + el.scrollHeight + 'px';
+        }, 0);
+      }
+
